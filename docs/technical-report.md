@@ -252,6 +252,6 @@ Dự án cung cấp foundation vững chắc cho việc phát triển các ứng
 
 ---
 
-**Tác giả**: Lab Group  
+**Tác giả**: Nhóm 22
 **Ngày hoàn thành**: 12/08/2025  
 **Môn học**: Phát triển Ứng dụng Web Nâng cao

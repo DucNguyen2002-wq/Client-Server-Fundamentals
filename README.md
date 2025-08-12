@@ -114,6 +114,3 @@ Các test cases đã triển khai:
 - Nhóm Lab 01
 - Môn: Phát triển Ứng dụng Web Nâng cao
 - Ngày: 12/08/2025
-
-## Giấy phép
-MIT License

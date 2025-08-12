@@ -1,0 +1,28 @@
+{
+  "name": "lab01-client-server-fundamentals",
+  "version": "1.0.0",
+  "description": "Bài thực hành về kiến thức cơ bản Client-Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "client": "node client.js",
+    "monitor": "node monitor.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "http",
+    "server",
+    "client",
+    "express",
+    "nodejs"
+  ],
+  "author": "Lab Group",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

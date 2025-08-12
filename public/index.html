@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab01 - Client-Server Fundamentals</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-server"></i> Lab01 - Client-Server Fundamentals</h1>
+            <p class="subtitle">Bài thực hành về kiến trúc Client-Server và HTTP Protocol</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Server Status Section -->
+            <section class="card">
+                <h2><i class="fas fa-info-circle"></i> Server Status</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span class="label">Status:</span>
+                        <span class="value" id="server-status">
+                            <i class="fas fa-circle status-online"></i> Online
+                        </span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Current Time:</span>
+                        <span class="value" id="current-time">Loading...</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Uptime:</span>
+                        <span class="value" id="server-uptime">Loading...</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Platform:</span>
+                        <span class="value" id="server-platform">Loading...</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="refreshServerInfo()">
+                    <i class="fas fa-sync-alt"></i> Refresh Server Info
+                </button>
+            </section>
+
+            <!-- Server Information Section -->
+            <section class="card">
+                <h2><i class="fas fa-database"></i> Server Information</h2>
+                <div id="server-info" class="server-info">
+                    <p>Click "Get Server Info" to load server details...</p>
+                </div>
+                <button class="btn btn-success" onclick="getServerInfo()">
+                    <i class="fas fa-download"></i> Get Server Info
+                </button>
+            </section>
+
+            <!-- API Testing Section -->
+            <section class="card">
+                <h2><i class="fas fa-code"></i> API Testing</h2>
+                <div class="api-controls">
+                    <div class="input-group">
+                        <label for="api-endpoint">API Endpoint:</label>
+                        <select id="api-endpoint" class="form-control">
+                            <option value="/api/server-info">GET /api/server-info</option>
+                            <option value="/api/health">GET /api/health</option>
+                            <option value="/api/time">GET /api/time</option>
+                            <option value="/api/echo">POST /api/echo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group" id="post-data-group" style="display: none;">
+                        <label for="post-data">POST Data (JSON):</label>
+                        <textarea id="post-data" class="form-control" rows="3" placeholder='{"message": "Hello Server", "data": "test"}'></textarea>
+                    </div>
+                    
+                    <button class="btn btn-info" onclick="testAPI()">
+                        <i class="fas fa-play"></i> Test API
+                    </button>
+                </div>
+                
+                <div class="api-response">
+                    <h3>Response:</h3>
+                    <pre id="api-response">No response yet...</pre>
+                </div>
+            </section>
+
+            <!-- Network Monitor Section -->
+            <section class="card">
+                <h2><i class="fas fa-chart-line"></i> Network Monitor</h2>
+                <div class="monitor-controls">
+                    <button class="btn btn-warning" onclick="startNetworkMonitor()">
+                        <i class="fas fa-play-circle"></i> Start Monitor
+                    </button>
+                    <button class="btn btn-secondary" onclick="stopNetworkMonitor()">
+                        <i class="fas fa-stop-circle"></i> Stop Monitor
+                    </button>
+                    <button class="btn btn-danger" onclick="clearNetworkLog()">
+                        <i class="fas fa-trash"></i> Clear Log
+                    </button>
+                </div>
+                
+                <div class="network-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Requests:</span>
+                        <span class="stat-value" id="total-requests">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Successful:</span>
+                        <span class="stat-value" id="successful-requests">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Failed:</span>
+                        <span class="stat-value" id="failed-requests">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Avg Response Time:</span>
+                        <span class="stat-value" id="avg-response-time">0ms</span>
+                    </div>
+                </div>
+                
+                <div class="network-log">
+                    <h3>Network Log:</h3>
+                    <div id="network-log-content" class="log-content">
+                        Network monitoring not started...
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="card">
+                <h2><i class="fas fa-graduation-cap"></i> About This Lab</h2>
+                <div class="about-content">
+                    <p><strong>Môn học:</strong> Phát triển Ứng dụng Web Nâng cao</p>
+                    <p><strong>Ngày thực hiện:</strong> Thứ Ba, 12/08/2025</p>
+                    <p><strong>Mục tiêu:</strong></p>
+                    <ul>
+                        <li>Hiểu kiến trúc Client-Server</li>
+                        <li>Nắm vững HTTP Protocol</li>
+                        <li>Xây dựng HTTP Server và Client</li>
+                        <li>Phân tích Network Traffic</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Lab Group - Client-Server Fundamentals</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
